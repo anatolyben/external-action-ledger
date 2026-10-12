@@ -1,0 +1,58 @@
+{
+  "name": "external-action-ledger",
+  "version": "0.1.0",
+  "description": "Durable external-action tracking with conservative retries and explicit uncertainty",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anatolyben/external-action-ledger.git"
+  },
+  "homepage": "https://github.com/anatolyben/external-action-ledger#readme",
+  "bugs": {
+    "url": "https://github.com/anatolyben/external-action-ledger/issues"
+  },
+  "keywords": ["postgresql", "idempotency", "external-actions", "retries", "workflow"],
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./postgres": {
+      "types": "./src/postgres.d.ts",
+      "default": "./src/postgres.js"
+    }
+  },
+  "files": [
+    "src",
+    "README.md",
+    "VALIDATION.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/core.test.js test/simulations.test.js test/http-provider.test.js test/json.test.js",
+    "test:sql": "node --test test/postgres-sql.test.js",
+    "test:postgres": "node --test test/postgres-native.test.js",
+    "test:types": "tsc -p test/tsconfig.json",
+    "simulate": "node examples/failure-simulator.js",
+    "gist": "node scripts/prepare-gist.js",
+    "check": "npm test && npm run test:sql && npm run test:types",
+    "release:check": "npm run check && npm run test:postgres",
+    "prepublishOnly": "npm run release:check"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "tag": "experimental"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.9",
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.23.1",
+    "pg": "^8.16.3",
+    "typescript": "^5.9.3"
+  }
+}
