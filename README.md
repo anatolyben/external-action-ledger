@@ -14,7 +14,7 @@ npm run simulate
 
 `check` runs behavioral tests, PostgreSQL SQL smoke tests using PGlite, and TypeScript API checks. It does not run a native PostgreSQL server. See [VALIDATION.md](VALIDATION.md) for precisely what has been verified.
 
-For the companion gist, run `npm run gist`. It imports the versioned package and demonstrates lost-response handling and evidence-based recovery. The full project retains the broader failure-simulation suite. The gist does not contain a second copy of the library.
+Run the [companion Gist](https://gist.github.com/anatolyben/3330d4edc912d7b3e9c20f0759a7086c) for a demonstration of lost-response handling and evidence-based recovery using the versioned package. To regenerate its files locally, run `npm run gist`. The full project retains the broader failure-simulation suite. The gist does not contain a second copy of the library.
 
 ## Small API
 

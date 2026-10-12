@@ -14,7 +14,7 @@ npm test
 npm start
 ```
 
-The dependency is pinned to the `0.1.0` tarball attached to the [GitHub release](https://github.com/anatolyben/external-action-ledger/releases/tag/v0.1.0). npm registry publication is separate and is not required to run this demo. The release workflow must complete before these download links become available.
+The dependency is pinned to the `0.1.0` tarball attached to the [GitHub release](https://github.com/anatolyben/external-action-ledger/releases/tag/v0.1.0). npm registry publication is separate and is not required to run this demo.
 
 ## What happens
 
@@ -59,3 +59,6 @@ Leases fence ledger writes, not external requests. They cannot stop a paused pro
 
 This is an experimental `0.1.0` API, not a production-readiness claim. MIT license.
 
+## Related example
+
+[Lowercasing doesn't catch lookalike usernames](https://gist.github.com/anatolyben/f326542a92a47fea8db2d2f3419ff25c) demonstrates JavaScript confusable folding and its false-positive tradeoffs.
